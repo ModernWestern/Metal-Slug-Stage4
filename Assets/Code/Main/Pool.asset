@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 917a9bf169392a645b1b1c1ee835d48e, type: 3}
+  m_Name: Pool
+  m_EditorClassIdentifier: 
+  poolData:
+  - name: Player
+    poolType: 1
+    prefab: {fileID: 6741663495111559120, guid: 37b452e789a8612468e23936ef7dd12c,
+      type: 3}
+    capacity: 1
+  - name: Bullet_
+    poolType: 3
+    prefab: {fileID: 2280370670871685410, guid: 6f4165c85add3bf448113a7e1ae84186,
+      type: 3}
+    capacity: 10
+  - name: Rocket_
+    poolType: 4
+    prefab: {fileID: 375358732476240700, guid: fff9e1e60b73a104cb26bf5804a243aa, type: 3}
+    capacity: 5
+  - name: RocketAmmo_
+    poolType: 5
+    prefab: {fileID: 7406784463842986963, guid: 24ddc4a4d0f96034897dea5deb668261,
+      type: 3}
+    capacity: 5
+  - name: AudioSource_
+    poolType: 0
+    prefab: {fileID: 7412925494652371107, guid: 976052ed5c1c22e4fbeb97a5590c2541,
+      type: 3}
+    capacity: 10
