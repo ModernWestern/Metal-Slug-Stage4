@@ -43,13 +43,14 @@ public class Projectile : MonoBehaviour
             switch (hit.transform.gameObject.tag)
             {
                 case Globals.Tags.Enemy:
+                    Globals.Tools.ObjectPooling.Drop(PoolType.Enemy, hit.transform.gameObject);
                     Globals.Tools.Event.Fire(EventType.OnSFX, Globals.SoundEffects.Death);
                     break;
                 case Globals.Tags.Loot:
+                    hit.transform.gameObject.SetActive(false);
                     Globals.Tools.Event.Fire(EventType.OnGetReward, hit.transform.gameObject); // Raise OnGetReward from Reward Class
                     break;
             }
-            hit.transform.gameObject.SetActive(false); // Deactivate the impacted GameObject
 
             Globals.Tools.ObjectPooling.Drop(ProjectileType, gameObject); // If projectile impact drop to the pool
         }

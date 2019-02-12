@@ -37,3 +37,8 @@ MonoBehaviour:
     prefab: {fileID: 7412925494652371107, guid: 976052ed5c1c22e4fbeb97a5590c2541,
       type: 3}
     capacity: 10
+  - name: Enemy_
+    poolType: 2
+    prefab: {fileID: 9057627834481558368, guid: ec16c43537ec3104591e77bcaed164b7,
+      type: 3}
+    capacity: 10

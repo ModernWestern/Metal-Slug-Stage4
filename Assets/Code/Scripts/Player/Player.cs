@@ -3,7 +3,6 @@
 public class Player
 {
     public GameObject Entity { get; private set; }
-    public MonoBehaviour Mono { get; private set; }
 
     public bool Grounded { get; set; }
     public bool Stab { get; set; }
@@ -14,10 +13,9 @@ public class Player
     public GameObject Gun { get; private set; }
     public GameObject FirePoint { get; private set; }
 
-    public Player(GameObject entity, IBehaviour[] behaviours, MonoBehaviour mono)
+    public Player(GameObject entity, IBehaviour[] behaviours)
     {
         Entity = entity;
-        Mono = mono;
 
         Body = Entity.transform.GetChild(0).gameObject;
         Gun = Body.transform.GetChild(0).gameObject;

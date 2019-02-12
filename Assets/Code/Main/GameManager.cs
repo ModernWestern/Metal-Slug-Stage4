@@ -15,11 +15,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        var playerPrefab = Globals.Tools.ObjectPooling.Grab(PoolType.Player);
+        var player = Globals.Tools.ObjectPooling.Grab(PoolType.Player);
 
         #region Camera
 
-        new CameraFollow(playerPrefab, 2);
+        new CameraFollow(player, 2);
         #endregion
 
         #region Audio
@@ -48,14 +48,19 @@ public class GameManager : MonoBehaviour
         playerBehaviours[6] = new Stab();
         playerBehaviours[7] = new Pick();
 
-        new Player(playerPrefab, playerBehaviours, this);
+        new Player(player, playerBehaviours);
         #endregion
 
         #region Rewards
 
-        var loot = new Loot(lootsContainer);
+        new Loot(lootsContainer);
         #endregion
 
+        #region Enemies
+
+        new EnemySapwner(player);
+        #endregion
+        
         Globals.Tools.Event.Fire(EventType.OnSFX, Globals.SoundEffects.MissionStart); // SFX
     }
 }
