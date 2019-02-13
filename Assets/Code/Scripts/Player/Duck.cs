@@ -11,7 +11,7 @@ public class Duck : IBehaviour
     {
         Globals.Tools.Event.Subscribe(EventType.OnUpdate, Ducking);
     }
-
+    
     public void Init(object obj)
     {
         player = obj as Player;
@@ -37,5 +37,10 @@ public class Duck : IBehaviour
             else player.Entity.transform.localScale = STAND;
         }
         else Globals.Tools.Event.Unsubscribe(EventType.OnUpdate, Ducking);
+    }
+
+    public IBehaviour Clone()
+    {
+        return new Duck();
     }
 }

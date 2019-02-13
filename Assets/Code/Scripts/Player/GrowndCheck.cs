@@ -23,4 +23,9 @@ public class GrowndCheck : IBehaviour
         if (player.Entity) player.Grounded = Physics.Raycast(ray, 1.125f, Globals.Layers.Ground) ? true : false;
         else Globals.Tools.Event.Unsubscribe(EventType.OnUpdate, GroundCheck);
     }
+
+    public IBehaviour Clone()
+    {
+        return new GrowndCheck();
+    }
 }

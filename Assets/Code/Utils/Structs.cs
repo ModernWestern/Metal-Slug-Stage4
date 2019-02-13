@@ -22,7 +22,7 @@ public struct SoundEffect
     public int clip;
     public float volume;
     public float pitch;
-    
+
     public SoundEffect(int clip, float volume, float pitch)
     {
         this.clip = clip;
@@ -40,5 +40,17 @@ public struct RewardItem
     {
         this.item = item;
         this.poolType = poolType;
+    }
+}
+
+public struct Squad
+{
+    public Enemy[] squad;
+    public Vector3[] positions;
+
+    public Squad(Enemy[] squad, Vector3[] positions)
+    {
+        this.squad = squad;
+        this.positions = positions;
     }
 }

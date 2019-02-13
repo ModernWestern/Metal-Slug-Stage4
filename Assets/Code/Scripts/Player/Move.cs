@@ -17,7 +17,7 @@ public class Move : IBehaviour
 
         Globals.Tools.Event.Subscribe(EventType.OnUpdate, Moving);
     }
-
+    
     public void Init(object obj)
     {
         player = obj as Player;
@@ -62,5 +62,10 @@ public class Move : IBehaviour
             else player.Entity.transform.position = player.Entity.transform.position + GetFree; // Get Free (Player get stuck in camera bounds)
         }
         else Globals.Tools.Event.Unsubscribe(EventType.OnUpdate, Moving);
+    }
+
+    public IBehaviour Clone()
+    {
+        return new Move(MinSpeed, MaxSpeed);
     }
 }

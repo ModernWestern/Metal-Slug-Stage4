@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class Shoot : IBehaviour
+﻿public class Shoot : IBehaviour
 {
     private IWeapon[] weapons;
     private Player player;
@@ -54,5 +52,10 @@ public class Shoot : IBehaviour
             }
             else currentWeapon = WeaponType.Pistol;
         }
+    }
+
+    public IBehaviour Clone()
+    {
+        return new Shoot(weapons);
     }
 }

@@ -31,4 +31,9 @@ public class Pick : IBehaviour
         Globals.Tools.Event.Fire(EventType.OnSFX, Globals.SoundEffects.PickUp); // Fire a sfx
         Globals.Tools.ObjectPooling.Drop(item.Value.poolType, item.Value.item); // Drop RocketAmmo prefab to the pool
     }
+
+    public IBehaviour Clone()
+    {
+        return new Pick();
+    }
 }

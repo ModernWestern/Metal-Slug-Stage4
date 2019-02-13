@@ -24,4 +24,9 @@ public class Stab : IBehaviour
             Globals.Tools.Event.Fire(EventType.OnSFX, Globals.SoundEffects.Stab);
         }
     }
+
+    public IBehaviour Clone()
+    {
+        return new Stab();
+    }
 }

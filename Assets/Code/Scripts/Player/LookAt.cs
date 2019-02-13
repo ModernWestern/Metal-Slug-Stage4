@@ -57,4 +57,9 @@ public class LookAt : IBehaviour
         RewardItem? Item = new RewardItem(hit.transform.gameObject, PoolType.RocketAmmo);
         Globals.Tools.Event.Fire(EventType.OnItemPickUp, Item);
     }
+
+    public IBehaviour Clone()
+    {
+        return new LookAt();
+    }
 }

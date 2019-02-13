@@ -16,7 +16,7 @@ public class Jump : IBehaviour
         Globals.Tools.Event.Subscribe(EventType.OnUpdate, Inputs);
         Globals.Tools.Event.Subscribe(EventType.OnUpdate, Jumping);
     }
-
+    
     public void Init(object obj)
     {
         player = obj as Player;
@@ -48,5 +48,10 @@ public class Jump : IBehaviour
             Globals.Tools.Event.Unsubscribe(EventType.OnUpdate, Inputs);
             Globals.Tools.Event.Unsubscribe(EventType.OnUpdate, Jumping);
         }
+    }
+
+    public IBehaviour Clone()
+    {
+        return new Jump(JumpForce);
     }
 }
